@@ -1,0 +1,41 @@
+import re
+
+def main():
+	dim1 = input('Size of first matrix ')
+	size1 = [int(x) for x in dim1.split() if x.isdigit()]
+	mat1 = []
+	for i in range(size1[0]):
+		rows = input('Enter values ')
+		row = []
+		for num in rows.split():
+			row.append(float(num))
+		mat1.append(row)
+	print(mat1)
+	dim2 = input('Size of second matrix ')
+	size2 = [int(x) for x in dim2.split() if x.isdigit()]
+	print(size2)
+	mat2 = []
+	for i in range(size2[0]):
+		rows = input('Enter values ')
+		row = []
+		for num in rows.split():
+			row.append(float(num))
+		mat2.append(row)
+	print(mat2)
+	if size1[1] != size2[0]:
+		print('invalid input')
+	else:
+		result_mat = []
+		for i in range(size1[0]):
+			rows = []
+			for x in range(size2[1]):
+				rows.append(1.1)
+			result_mat.append(rows)
+		for i in range(len(mat1)):
+			for j in range(len(mat2[0])):
+				for k in range(len(mat2)):
+					result_mat[i][j] += mat1[i][k] * mat2[k][j]
+		print(result_mat)
+
+if __name__ == '__main__':
+	main()
